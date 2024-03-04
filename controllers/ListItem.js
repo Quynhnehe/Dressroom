@@ -15,11 +15,13 @@ let dressUp = document.createElement('img');
 let divContain = document.querySelector('.contain');
 divContain.appendChild(dressUp);
 dressUp.id = "dressUp";
+dressUp.className = "dUp";
 
 
 function WearClothes(e) {
     let clothes = e.target.id;
-    // console.log(clothes);
+    let cthes = e.target.className;
+    
     let img = document.getElementById("dressUp");
     img.src = clothes;
     img.style.position = "absolute";
@@ -27,6 +29,17 @@ function WearClothes(e) {
     img.style.left = "-5%";
     img.style.zIndex = "10";
     img.style.transform = "scale(0.5)";
+
+    let image = document.getElementsByClassName("dUp");
+    image.src = cthes;
+    image.style.position = "absolute";
+    image.style.bottom = "-90%";
+    image.style.right = "50%";
+    image.style.zIndex = "-1";
+    image.style.transform = "scale(0.5)";
+    image.style.width = "900px";
+    image.style.height = "1500px";
+    image.style.backgroundSize = "cover";
 }
 
 
